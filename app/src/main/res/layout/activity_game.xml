@@ -1,0 +1,192 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".GameActivity">
+
+    <com.whackanandroid.PeelsFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Score: 0"
+        android:textSize="10pt"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tvScoreInGame"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/tvScoreInGame"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/timerFrame"
+        android:orientation="vertical">
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timer:"
+            android:textSize="15pt"/>
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15pt"
+            android:id="@+id/timerValue"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/btnPause"
+        android:layout_below="@id/timerFrame"
+        android:layout_alignLeft="@id/timerFrame"
+        android:background="@drawable/pause"
+        android:onClick="pauseClick"/>
+
+    <com.whackanandroid.PeelsFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPause"
+        android:id="@+id/pauseText"
+        android:layout_alignLeft="@id/timerFrame"
+        android:visibility="gone"
+        android:text="PAUSED"
+        android:textSize="10pt"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tvScoreInGame"
+        android:layout_toRightOf="@id/timerFrame"
+        android:layout_alignTop="@id/timerFrame"
+        android:id="@+id/phones">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone1"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone2"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone3"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone4"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone5"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone6"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone7"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+            <ImageView
+                android:layout_width="@dimen/phone_width"
+                android:layout_height="@dimen/phone_height"
+                android:src="@drawable/phone"
+                android:id="@+id/phone8"
+                android:layout_marginTop="@dimen/phone_top_margin"
+                android:layout_marginLeft="@dimen/phone_left_margin"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/game_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ff00"
+        android:gravity="center_horizontal"
+        android:onClick="removeCover"
+        android:orientation="vertical">
+
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whack an Android!"
+            android:layout_marginTop="5dp"
+            android:textSize="20pt"/>
+
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Highscore: "
+            android:textSize="10pt"/>
+
+        <com.whackanandroid.PeelsFontTextView
+            android:id="@+id/tvHighscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15pt"/>
+
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="Your score:"
+            android:id="@+id/tvScoreText"
+            android:visibility="gone"/>
+
+        <com.whackanandroid.PeelsFontTextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15pt"/>
+
+        <com.whackanandroid.PeelsFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Tap anywhere to start"
+            android:textSize="15pt"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
